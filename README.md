@@ -1,7 +1,9 @@
 # javascript
 
-First example - just a simple js file exemple
-Second example - just an example how strict mode helps to highlight some mistakes
+**Examples**
+
+1. Just a simple js file exemple
+2. An example how strict mode helps to highlight some mistakes
 
 **Coding challenges:**
 
