@@ -1,6 +1,7 @@
 # javascript
 
 First example - just a simple js file exemple
+Second example - just an example how strict mode helps to highlight some mistakes
 
 **Coding challenges:**
 
