@@ -12,3 +12,4 @@
 3. Else if - Comparing the average of two teams scores
 4. Ternary operator - Calculating the tip of a bill
 5. Functions - Get the average from scores of two team and see who's winner
+6. Array - Calculating tips for a array of bills
