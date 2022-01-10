@@ -4,6 +4,7 @@
 
 1. Just a simple js file exemple
 2. An example how strict mode helps to highlight some mistakes
+3. How to solve problems following an framework to find the solution
 
 **Coding challenges:**
 
@@ -14,4 +15,4 @@
 5. Functions - Get the average from scores of two team and see who's winner
 6. Array - Calculating tips for a array of bills
 7. Objects - Created two objetcs to represent to user and compare there BMI's
-8. Loops - Calculating the tips of a array of bills using an looping for
+8. Loops - Calculating the tips of a array of bills using a looping for
