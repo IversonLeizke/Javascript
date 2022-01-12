@@ -16,3 +16,4 @@
 6. Array - Calculating tips for a array of bills
 7. Objects - Created two objetcs to represent to user and compare there BMI's
 8. Loops - Calculating the tips of a array of bills using a looping for
+9. Framework - Finding a solution for a problem
