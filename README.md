@@ -5,6 +5,7 @@
 1. Just a simple js file exemple
 2. An example how strict mode helps to highlight some mistakes
 3. How to solve problems following an framework to find the solution
+4. Guess my number - manipulating the doom
 
 **Coding challenges:**
 
