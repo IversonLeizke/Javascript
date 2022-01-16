@@ -5,7 +5,6 @@
 1. Just a simple js file exemple
 2. An example how strict mode helps to highlight some mistakes
 3. How to solve problems following an framework to find the solution
-4. Guess my number - manipulating the doom
 
 **Coding challenges:**
 
@@ -18,3 +17,7 @@
 7. Objects - Created two objetcs to represent to user and compare there BMI's
 8. Loops - Calculating the tips of a array of bills using a looping for
 9. Framework - Finding a solution for a problem
+
+**Projects**
+
+1. Guess my number - manipulating the doom
