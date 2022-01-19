@@ -21,3 +21,4 @@
 **Projects**
 
 1. Guess my number - manipulating the doom
+2. Modal - handling events
