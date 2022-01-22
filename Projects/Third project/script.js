@@ -17,9 +17,23 @@ score0El.textContent = 0;
 score1El.textContent = 0;
 diceEl.classList.add('hidden');
 
-const scores = [0, 0];
-let currentScore = 0;
-let activePlayer = 0;
+let scores, currentScore, activePlayer, playing;
+
+function init() {
+    playing = true;
+    scores = [0, 0];
+    activePlayer = 0;
+    currentScore = 0;
+    document.querySelector(`.player--0`).classList.remove('player--winner');
+    document.querySelector(`.player--1`).classList.remove('player--winner');
+    document.querySelector(`.player--0`).classList.add('player--active');
+    document.querySelector(`.player--1`).classList.remove('player--active');
+    document.getElementById(`current--1`).textContent = 0;
+    document.getElementById(`current--0`).textContent = 0;
+    score0El.textContent = score1El.textContent = 0;
+}
+
+init();
 
 // Change the player
 const changePlayer = function () {
@@ -32,21 +46,44 @@ const changePlayer = function () {
 
 // Rolling the dice functionality
 btnRoll.addEventListener('click', function () {
-    // 1. Generating a randon dice roll
-    const dice = Math.trunc(Math.random() * 6) + 1;
-    // 2. Display the dice
-    diceEl.classList.remove('hidden');
-    diceEl.src = `dice-${dice}.png`;
-    // 3. Check for a rolled one, if true switch for next player
-    if (dice != 1) {
-        currentScore += dice;
-        document.getElementById(`current--${activePlayer}`).textContent = currentScore;
-    } else {
-        changePlayer();
+    if (playing) {
+        // 1. Generating a randon dice roll
+        const dice = Math.trunc(Math.random() * 6) + 1;
+        // 2. Display the dice
+        diceEl.classList.remove('hidden');
+        diceEl.src = `dice-${dice}.png`;
+        // 3. Check for a rolled one, if true switch for next player
+        if (dice != 1) {
+            currentScore += dice;
+            document.getElementById(`current--${activePlayer}`).textContent =
+                currentScore;
+        } else {
+            changePlayer();
+        }
     }
 });
 
 // Hold the point
 btnhold.addEventListener('click', function () {
-    changePlayer();
+    if (playing) {
+        scores[activePlayer] += currentScore;
+        activePlayer == 0
+            ? (score0El.textContent = scores[activePlayer])
+            : (score1El.textContent = scores[activePlayer]);
+        if (scores[activePlayer] >= 100) {
+            console.log(`The player ${activePlayer + 1} won the game.`);
+            document
+                .querySelector(`.player--${activePlayer}`)
+                .classList.add('player--winner');
+            document
+                .querySelector(`.player--${activePlayer}`)
+                .classList.remove('player--active');
+            playing = false;
+            diceEl.classList.add('hidden');
+        } else {
+            changePlayer();
+        }
+    }
 });
+
+btnNew.addEventListener('click', init);
