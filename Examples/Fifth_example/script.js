@@ -23,7 +23,19 @@ const restaurant = {
     order: function (startesIndex, mainIndex) {
         return [this.starterMenu[startesIndex], this.mainMenu[mainIndex]];
     },
+    orderDelivery: function ({ startesIndex, mainIndex, time, address }) {
+        console.log(
+            `Order received! ${this.starterMenu[startesIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}.`
+        );
+    },
 };
+
+restaurant.orderDelivery({
+    time: '22:30',
+    address: 'Rua Aldano José Vieira, 712',
+    mainIndex: 2,
+    startesIndex: 2,
+});
 
 const { name, openingHours, categories } = restaurant;
 // Destructing an object, the name of the variables must be the same of the object properties
@@ -39,3 +51,8 @@ let a = 111;
 let b = 999;
 const obj = { a: 23, b: 7, c: 14 };
 ({ a, b } = obj);
+
+// nested objects
+const {
+    fri: { open, close },
+} = openingHours;
