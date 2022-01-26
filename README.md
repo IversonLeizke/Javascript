@@ -7,6 +7,7 @@
 3. How to solve problems following an framework to find the solution
 4. Destructuring arrays
 5. Destructuring objects
+6. Spread Operator
 
 **Coding challenges:**
 
