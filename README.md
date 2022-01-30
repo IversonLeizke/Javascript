@@ -9,6 +9,7 @@
 5. Destructuring objects
 6. Spread operator
 7. Rest pattern and parameters
+8. Short circuting
 
 **Coding challenges:**
 
