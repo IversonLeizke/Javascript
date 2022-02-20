@@ -10,6 +10,7 @@
 6. Spread operator
 7. Rest pattern and parameters
 8. Short circuting
+9. Nullish Coalescing Operator
 
 **Coding challenges:**
 
