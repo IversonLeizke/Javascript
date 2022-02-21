@@ -2,15 +2,16 @@
 
 **Examples**
 
-1. Just a simple js file exemple
-2. An example how strict mode helps to highlight some mistakes
-3. How to solve problems following an framework to find the solution
-4. Destructuring arrays
-5. Destructuring objects
-6. Spread operator
-7. Rest pattern and parameters
-8. Short circuting
-9. Nullish Coalescing Operator
+1.  Just a simple js file exemple
+2.  An example how strict mode helps to highlight some mistakes
+3.  How to solve problems following an framework to find the solution
+4.  Destructuring arrays
+5.  Destructuring objects
+6.  Spread operator
+7.  Rest pattern and parameters
+8.  Short circuting
+9.  Nullish Coalescing Operator
+10. Logical assignment operator
 
 **Coding challenges:**
 
