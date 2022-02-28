@@ -24,7 +24,7 @@
 7. Objects - Created two objetcs to represent to user and compare there BMI's
 8. Loops - Calculating the tips of a array of bills using a looping for
 9. Framework - Finding a solution for a problem
-10. Data Structures - Spread operador, rest operator, destructuring objects
+10. Data Structures - Spread operador, rest operator, logical operator, destructuring objects
 
 **Projects**
 

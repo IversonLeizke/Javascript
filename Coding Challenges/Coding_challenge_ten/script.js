@@ -47,7 +47,9 @@ const [gk1, ...fieldPlayers1] = players1;
 const [gk2, ...fieldPlayers2] = players2;
 const allPlayers = [...players1, ...players2];
 const allPlayersTeam1 = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
-const { team1, x: draw, team2 } = game.odds;
+const {
+    odds: { team1, x: draw, team2 },
+} = game;
 
 function printGoals(...players) {
     players.forEach((element, index) => {
@@ -57,3 +59,7 @@ function printGoals(...players) {
 
 printGoals('Davies', 'Muller', 'Lewandowski', 'Kimich');
 printGoals(...game.scored);
+
+team1 < team2 && console.log('Team 1 is more likely to wim');
+
+team1 > team2 && console.log('Team 2 is more likely to wim');
