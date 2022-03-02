@@ -4,7 +4,7 @@
 
 1.  Just a simple js file exemple
 2.  An example how strict mode helps to highlight some mistakes
-3.  How to solve problems following an framework to find the solution
+3.  How to solve problems following a framework to find the solution
 4.  Destructuring arrays
 5.  Destructuring objects
 6.  Spread operator
@@ -13,6 +13,7 @@
 9.  Nullish Coalescing Operator
 10. Logical assignment operator
 11. Loop for of
+12. Optional chaining operator
 
 **Coding challenges:**
 
@@ -20,10 +21,10 @@
 2. IF and Else - Comparing two users BMI results
 3. Else if - Comparing the average of two teams scores
 4. Ternary operator - Calculating the tip of a bill
-5. Functions - Get the average from scores of two team and see who's winner
-6. Array - Calculating tips for a array of bills
-7. Objects - Created two objetcs to represent to user and compare there BMI's
-8. Loops - Calculating the tips of a array of bills using a looping for
+5. Functions - Get the average from scores of two teams and see who's the winner
+6. Array - Calculating tips for an array of bills
+7. Objects - Created two objetcs to represent two user and compare there BMI's
+8. Loops - Calculating the tips of an array of bills using a looping for
 9. Framework - Finding a solution for a problem
 10. Data Structures - Spread operador, rest operator, logical operator, destructuring objects
 
