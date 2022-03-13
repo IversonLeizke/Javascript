@@ -15,6 +15,7 @@
 11. Loop for of
 12. Optional chaining operator
 13. Looping over an object
+14. Sets
 
 **Coding challenges:**
 
