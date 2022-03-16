@@ -16,6 +16,7 @@
 12. Optional chaining operator
 13. Looping over an object
 14. Sets
+15. Maps
 
 **Coding challenges:**
 
