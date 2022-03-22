@@ -31,6 +31,7 @@
 9. Framework - Finding a solution for a problem
 10. Data Structures - Spread operador, rest operator, logical operator, destructuring objects
 11. Loop of - Over an object and over an array
+12. Data Structures - Arrays, sets, maps and objects
 
 **Projects**
 
