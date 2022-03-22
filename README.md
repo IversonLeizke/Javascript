@@ -17,6 +17,7 @@
 13. Looping over an object
 14. Sets
 15. Maps
+16. Strings
 
 **Coding challenges:**
 
