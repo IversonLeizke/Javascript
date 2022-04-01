@@ -31,3 +31,9 @@ console.log(plane2.includes('320'));
 console.log(plane2.startsWith('A420'));
 
 console.log(plane2.endsWith('neo'));
+
+const [firstname, lastName] = 'Iverson Leitzke'.split(' ');
+
+const newName = ['Mr.', firstname, lastName.toUpperCase()].join(' ');
+
+console.log(newName.padStart(20, '>'));
