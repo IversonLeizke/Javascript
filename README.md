@@ -18,6 +18,7 @@
 14. Sets
 15. Maps
 16. Strings
+17. Functions,better look into it
 
 **Coding challenges:**
 
