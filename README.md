@@ -33,6 +33,7 @@
 10. Data Structures - Spread operador, rest operator, logical operator, destructuring objects
 11. Loop of - Over an object and over an array
 12. Data Structures - Arrays, sets, maps and objects
+13. Strings - Converting a list underscores_case in a string to camelCase
 
 **Projects**
 
