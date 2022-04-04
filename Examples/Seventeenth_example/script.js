@@ -34,3 +34,19 @@ const transformer = function (str, fn) {
 transformer('Javascript is the best!', upperFirstWord);
 
 transformer('Javascript is the best!', oneWord);
+
+const greet = function (greeting) {
+    return function (name) {
+        console.log(`${greeting} ${name}!`);
+    };
+};
+
+const greeterHey = greet('Hey');
+
+greeterHey('Iverson');
+
+greet('Hello')('Iverson');
+
+const greet2 = greeting => name => console.log(`${greeting} ${name}!`);
+
+greet2("What's up")('Iverson');
