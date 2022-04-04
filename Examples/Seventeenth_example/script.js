@@ -50,3 +50,34 @@ greet('Hello')('Iverson');
 const greet2 = greeting => name => console.log(`${greeting} ${name}!`);
 
 greet2("What's up")('Iverson');
+
+const book = function (flighNumber, passenger) {
+    console.log(
+        `${passenger} book a seat on ${this.airlineName} fligh ${this.iataCode}${flighNumber}`
+    );
+    this.bookings.push({
+        fligh: `${this.iataCode}${flighNumber}`,
+        passenger,
+    });
+};
+
+const lufthansa = {
+    airlineName: 'Luththansa',
+    iataCode: 'LH',
+    bookings: [],
+    book,
+};
+
+const eurowings = {
+    airlineName: 'Eurowings',
+    iataCode: 'EW',
+    bookings: [],
+    book,
+};
+
+lufthansa.book('123', 'Iverson Leitzke');
+eurowings.book('246', 'Iverson Leitzke');
+
+book.call(eurowings, '689', 'Sara Willians');
+
+book.apply(lufthansa, [583, 'George Cooper']);
