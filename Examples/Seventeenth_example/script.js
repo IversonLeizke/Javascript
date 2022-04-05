@@ -81,3 +81,29 @@ eurowings.book('246', 'Iverson Leitzke');
 book.call(eurowings, '689', 'Sara Willians');
 
 book.apply(lufthansa, [583, 'George Cooper']);
+
+const bookEw = book.bind(eurowings);
+
+bookEw(741, 'John Smith');
+
+const bookEw23 = book.bind(eurowings, 23);
+
+bookEw23('Robert');
+
+lufthansa.planes = 300;
+lufthansa.buyPlane = function () {
+    console.log(this);
+    this.planes++;
+    console.log(this.planes);
+};
+
+document
+    .querySelector('.buy')
+    .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(0.1, 100));
+
+const addVAT = addTax.bind(undefined, 0.2);
+
+console.log(addVAT(200));
