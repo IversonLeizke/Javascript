@@ -37,3 +37,8 @@ const [firstname, lastName] = 'Iverson Leitzke'.split(' ');
 const newName = ['Mr.', firstname, lastName.toUpperCase()].join(' ');
 
 console.log(newName.padStart(20, '>'));
+
+//Immediately invoked Function Expression
+(function () {
+    console.log('This only run once!');
+})();
