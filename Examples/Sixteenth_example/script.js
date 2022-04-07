@@ -42,3 +42,25 @@ console.log(newName.padStart(20, '>'));
 (function () {
     console.log('This only run once!');
 })();
+
+const secureBooking = function () {
+    let passengerCount = 0;
+    return function () {
+        passengerCount++;
+        console.log(`${passengerCount} passegers`);
+    };
+};
+
+const booker = secureBooking();
+
+let f;
+
+const g = function () {
+    const a = 23;
+    f = function () {
+        console.log(a * 2);
+    };
+};
+
+g();
+f();
