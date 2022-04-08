@@ -19,6 +19,7 @@
 15. Maps
 16. Strings
 17. Functions,better look into it
+18. Array - Array's methods
 
 **Coding challenges:**
 
@@ -43,3 +44,4 @@
 1. Guess my number - manipulating the doom
 2. Modal - handling events
 3. Pig Game - doom manipulation project
+4. Bankist - array methods
