@@ -23,3 +23,20 @@ console.log(letters.join('-'));
 const arr3 = [23, 11, 64];
 
 console.log(arr3.at(1));
+
+const currencies = new Map([
+    ['USD', 'United States Dollar'],
+    ['EUR', ' Euro'],
+    ['GBP', 'Pound Sterling'],
+]);
+
+currencies.forEach(function (value, index, arra) {
+    console.log(`The ${index} stand for ${value}.`);
+});
+
+const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
+
+//In sets the key and the value are the same
+currenciesUnique.forEach(function (value, key, arr) {
+    console.log(`${key}: ${value}`);
+});
