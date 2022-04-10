@@ -38,6 +38,7 @@
 13. Strings - Converting a list underscores_case in a string to camelCase
 14. Functions - Creating a programming for one poll
 15. Closures - Using the closure to get acess to a variable from other scope
+16. Arrays - Using some methods to change and print some data
 
 **Projects**
 
