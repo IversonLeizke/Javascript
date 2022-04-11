@@ -78,6 +78,17 @@ const displayMovements = function (movements) {
 
 displayMovements(account1.movements);
 
+const user = 'Steven Thomas Williams';
+const userName = function (accs) {
+    accs.forEach(function (acc) {
+        acc.username = acc.owner
+            .toLowerCase()
+            .split(' ')
+            .map(value => value[0])
+            .join('');
+    });
+};
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
