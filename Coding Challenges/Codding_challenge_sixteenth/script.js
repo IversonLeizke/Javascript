@@ -28,3 +28,17 @@ const printDogs = function (arr) {
 
 printDogs(newData1);
 printDogs(newData2);
+
+const convertToHumanAge = arr =>
+    arr.map(age => (age <= 2 ? age * 2 : age * 4 + 16));
+
+const overEighteen = arr => arr.filter(value => value >= 18);
+
+const average = arr =>
+    Math.trunc(arr.reduce((acc, value) => acc + value) / arr.length, 0);
+
+humanData1 = average(overEighteen(convertToHumanAge(newData1)));
+humanData2 = average(overEighteen(convertToHumanAge(newData2)));
+
+console.log(humanData1);
+console.log(humanData2);
