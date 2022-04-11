@@ -91,8 +91,25 @@ const calcPrintBalance = function (mov) {
     labelBalance.textContent = `${balance} EUR`;
 };
 
+const calcDisplaySumary = function (movements) {
+    const incomes = movements
+        .filter(value => value > 0)
+        .reduce((acc, value) => acc + value, 0);
+    labelSumIn.textContent = `${incomes} €`;
+    const outcomes = movements
+        .filter(value => value < 0)
+        .reduce((acc, value) => acc + value, 0);
+    labelSumOut.textContent = `${Math.abs(outcomes)} €`;
+    const interest = movements
+        .filter(value => value > 0)
+        .map(mov => (mov * 1.2) / 100)
+        .reduce((acc, value) => (value >= 1 ? acc + value : acc), 0);
+    labelSumInterest.textContent = `${interest} €`;
+};
+
 displayMovements(account1.movements);
 calcPrintBalance(account1.movements);
+calcDisplaySumary(account1.movements);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
