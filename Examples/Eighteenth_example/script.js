@@ -50,3 +50,5 @@ const movementsUSD = movements.map(mov => Math.trunc(mov * eurToUsd));
 const deposits = movements.filter(function (value) {
     return value > 0;
 });
+
+let balance = movements.reduce((acc, value) => acc + value, 0);
