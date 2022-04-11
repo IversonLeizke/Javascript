@@ -76,9 +76,6 @@ const displayMovements = function (movements) {
     });
 };
 
-displayMovements(account1.movements);
-
-const user = 'Steven Thomas Williams';
 const userName = function (accs) {
     accs.forEach(function (acc) {
         acc.username = acc.owner
@@ -88,6 +85,14 @@ const userName = function (accs) {
             .join('');
     });
 };
+
+const calcPrintBalance = function (mov) {
+    const balance = mov.reduce((acc, value) => acc + value, 0);
+    labelBalance.textContent = `${balance} EUR`;
+};
+
+displayMovements(account1.movements);
+calcPrintBalance(account1.movements);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
