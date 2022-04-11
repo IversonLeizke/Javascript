@@ -37,8 +37,16 @@ const overEighteen = arr => arr.filter(value => value >= 18);
 const average = arr =>
     Math.trunc(arr.reduce((acc, value) => acc + value) / arr.length, 0);
 
+const chaining = arr =>
+    Math.trunc(
+        arr
+            .map(age => (age <= 2 ? age * 2 : age * 4 + 16))
+            .filter(value => value >= 18)
+            .reduce((acc, value, _, arr2) => acc + value / arr2.length, 0)
+    );
+
 humanData1 = average(overEighteen(convertToHumanAge(newData1)));
-humanData2 = average(overEighteen(convertToHumanAge(newData2)));
+humanData2 = chaining(newData2);
 
 console.log(humanData1);
 console.log(humanData2);
