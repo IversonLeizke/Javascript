@@ -107,9 +107,12 @@ const calcDisplaySumary = function (movements) {
     labelSumInterest.textContent = `${interest} €`;
 };
 
-displayMovements(account1.movements);
-calcPrintBalance(account1.movements);
-calcDisplaySumary(account1.movements);
+const selectAccount = account => accounts.find(acc => acc.owner === account);
+
+let account = selectAccount('Jessica Davis');
+displayMovements(account.movements);
+calcPrintBalance(account.movements);
+calcDisplaySumary(account.movements);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
