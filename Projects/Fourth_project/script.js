@@ -91,28 +91,44 @@ const calcPrintBalance = function (mov) {
     labelBalance.textContent = `${balance} EUR`;
 };
 
-const calcDisplaySumary = function (movements) {
-    const incomes = movements
+const calcDisplaySumary = function (acc) {
+    const incomes = acc.movements
         .filter(value => value > 0)
         .reduce((acc, value) => acc + value, 0);
     labelSumIn.textContent = `${incomes} €`;
-    const outcomes = movements
+    const outcomes = acc.movements
         .filter(value => value < 0)
         .reduce((acc, value) => acc + value, 0);
     labelSumOut.textContent = `${Math.abs(outcomes)} €`;
-    const interest = movements
+    const interest = acc.movements
         .filter(value => value > 0)
-        .map(mov => (mov * 1.2) / 100)
+        .map(mov => (mov * acc.interestRate) / 100)
         .reduce((acc, value) => (value >= 1 ? acc + value : acc), 0);
     labelSumInterest.textContent = `${interest} €`;
 };
 
-const selectAccount = account => accounts.find(acc => acc.owner === account);
+userName(accounts);
 
-let account = selectAccount('Jessica Davis');
-displayMovements(account.movements);
-calcPrintBalance(account.movements);
-calcDisplaySumary(account.movements);
+let currentAccount;
+
+//Event  handler
+btnLogin.addEventListener('click', function (event) {
+    event.preventDefault();
+    currentAccount = accounts.find(
+        acc => acc.username === inputLoginUsername.value
+    );
+    if (currentAccount?.pin === Number(inputLoginPin.value)) {
+        labelWelcome.textContent = `Welcome back ${
+            currentAccount.owner.split(' ')[0]
+        }`;
+        containerApp.style.opacity = 100;
+        displayMovements(currentAccount.movements);
+        calcPrintBalance(currentAccount.movements);
+        calcDisplaySumary(currentAccount);
+        inputLoginPin.value = inputLoginUsername.value = '';
+        inputLoginPin.blur();
+    }
+});
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
