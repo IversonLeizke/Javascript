@@ -7,7 +7,7 @@ const resume = {
         maritalStatus: 'Single',
         driversLicense: 'AD',
         phone: '47-9####-####',
-        email: ['iversonleitzke@gmail.com', 'iversonleitzke@protonmail.com'],
+        email: ['iversonleitzke@gmail.com', 'iversonleitzke@proton.me'],
         nationality: 'Brasileiro',
         adress: new Map({
             street: 'Rua Aldano José Vieira',
