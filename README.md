@@ -1,5 +1,7 @@
 # javascript
 
+##The Complete JavaScript Course 2022: From Zero to Expert!
+
 **Examples**
 
 1.  Just a simple js file exemple
@@ -46,3 +48,7 @@
 2. Modal - handling events
 3. Pig Game - doom manipulation project
 4. Bankist - array methods
+
+## Personal
+
+1. Resume
