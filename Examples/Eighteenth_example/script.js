@@ -52,3 +52,5 @@ const deposits = movements.filter(function (value) {
 });
 
 let balance = movements.reduce((acc, value) => acc + value, 0);
+
+console.log(movements.some(mov => mov > 0));
