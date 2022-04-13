@@ -54,3 +54,11 @@ const deposits = movements.filter(function (value) {
 let balance = movements.reduce((acc, value) => acc + value, 0);
 
 console.log(movements.some(mov => mov > 0));
+
+const arr4 = [[1, 2, 3], [3, 4, 5], 6, 7];
+
+console.log(arr4.flat());
+
+const arrDeep = [[[1, 2], 3], [3, [4, 5]], 6, 7];
+
+console.log(arrDeep.flat(2));
