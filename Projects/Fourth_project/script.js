@@ -168,15 +168,16 @@ btnClose.addEventListener(`click`, function (e) {
         );
         inputClosePin.value = inputCloseUsername.value = '';
     }
+});
 
-    // const deletingAccount = accounts.find(
-    //     acc => acc.username === inputCloseUsername.value
-    // );
-    // if (deletingAccount.pin === inputClosePin.value) {
-    //     accounts.splice(
-    //         accounts.findIndex(acc => acc.username === inputCloseUsername.value)
-    //     );
-    // }
+btnLoan.addEventListener('click', function (e) {
+    e.preventDefault();
+    const loan = Number(inputLoanAmount.value);
+    if (loan > 0 && currentAccount.movements.some(mov => mov >= loan * 0.1)) {
+        currentAccount.movements.push(loan);
+    }
+    updateAccount(currentAccount);
+    inputLoanAmount.value = '';
 });
 
 /////////////////////////////////////////////////
