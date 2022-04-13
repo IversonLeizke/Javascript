@@ -152,6 +152,33 @@ btnTransfer.addEventListener(`click`, function (e) {
         inputTransferTo.value = inputTransferAmount.value = '';
     }
 });
+
+btnClose.addEventListener(`click`, function (e) {
+    e.preventDefault();
+    if (
+        currentAccount.username === inputCloseUsername.value &&
+        currentAccount.pin === Number(inputClosePin.value)
+    ) {
+        containerApp.style.opacity = 0;
+        accounts.splice(
+            accounts.findIndex(
+                acc => acc.username === inputCloseUsername.value
+            ),
+            1
+        );
+        inputClosePin.value = inputCloseUsername.value = '';
+    }
+
+    // const deletingAccount = accounts.find(
+    //     acc => acc.username === inputCloseUsername.value
+    // );
+    // if (deletingAccount.pin === inputClosePin.value) {
+    //     accounts.splice(
+    //         accounts.findIndex(acc => acc.username === inputCloseUsername.value)
+    //     );
+    // }
+});
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
