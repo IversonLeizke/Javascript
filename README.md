@@ -22,6 +22,7 @@
 16. Strings
 17. Functions,better look into it
 18. Array - Array's methods
+19. Array - Creating and filling arrays
 
 **Coding challenges:**
 
