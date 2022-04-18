@@ -23,6 +23,7 @@
 17. Functions,better look into it
 18. Array - Array's methods
 19. Array - Creating and filling arrays
+20. Numbers and Math object
 
 **Coding challenges:**
 
