@@ -24,7 +24,7 @@
 18. Array - Array's methods
 19. Array - Creating and filling arrays
 20. Numbers and Math object
-21. The Remainder operator
+21. The Remainder operator and Numeric Separators
 
 **Coding challenges:**
 
