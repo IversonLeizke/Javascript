@@ -26,6 +26,7 @@
 20. Numbers and Math object
 21. The Remainder operator and Numeric Separators
 22. BigInt
+23. Date and timing
 
 **Coding challenges:**
 
