@@ -25,6 +25,7 @@
 19. Array - Creating and filling arrays
 20. Numbers and Math object
 21. The Remainder operator and Numeric Separators
+22. BigInt
 
 **Coding challenges:**
 
