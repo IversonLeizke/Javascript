@@ -73,6 +73,22 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
+const displayDate = function (date) {
+    const day = `${date.getDate()}`.padStart(2, 0);
+    const month = `${date.getMonth() + 1}`.padStart(2, 0);
+    const year = date.getFullYear();
+    const days = Math.trunc((new Date() - date) / (1000 * 60 * 60 * 24));
+    if (days == 0) {
+        return 'Today';
+    } else if (days == 1) {
+        return 'Yesterday';
+    } else if (days <= 7) {
+        return `${days} days ago`;
+    } else {
+        return `${day}/${month}/${year}`;
+    }
+};
+
 const displayMovements = function (acc, sort = false) {
     const movs = sort
         ? acc.movements.slice().sort((a, b) => a - b)
@@ -81,16 +97,12 @@ const displayMovements = function (acc, sort = false) {
     movs.forEach(function (mov, i) {
         const type = mov > 0 ? 'deposit' : 'withdrawal';
         const date = new Date(acc.movementsDates[i]);
-        const day = `${date.getDate()}`.padStart(2, 0);
-        const month = `${date.getMonth() + 1}`.padStart(2, 0);
-        const year = date.getFullYear();
-        const displayDate = `${day}/${month}/${year}`;
         const html = `
         <div class="movements__row">
             <div class="movements__type movements__type--${type}">${
             i + 1
         } ${type}</div>
-        <div class="movements__date">${displayDate}</div>
+        <div class="movements__date">${displayDate(date)}</div>
         <div class="movements__value">${mov.toFixed(2)}€</div>
     </div>`;
         containerMovements.insertAdjacentHTML('afterbegin', html);
