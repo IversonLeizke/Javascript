@@ -74,9 +74,6 @@ const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
 const displayDate = function (date) {
-    const day = `${date.getDate()}`.padStart(2, 0);
-    const month = `${date.getMonth() + 1}`.padStart(2, 0);
-    const year = date.getFullYear();
     const days = Math.trunc((new Date() - date) / (1000 * 60 * 60 * 24));
     if (days == 0) {
         return 'Today';
@@ -85,7 +82,7 @@ const displayDate = function (date) {
     } else if (days <= 7) {
         return `${days} days ago`;
     } else {
-        return `${day}/${month}/${year}`;
+        return new Intl.DateTimeFormat(currentAccount.locale).format(date);
     }
 };
 
@@ -165,6 +162,19 @@ btnLogin.addEventListener('click', function (event) {
         inputLoginPin.value = inputLoginUsername.value = '';
         inputLoginPin.blur();
     }
+    const now = new Date();
+    const options = {
+        hour: 'numeric',
+        minute: 'numeric',
+        day: 'numeric',
+        month: 'numeric',
+        year: 'numeric',
+    };
+
+    labelDate.innerHTML = Intl.DateTimeFormat(
+        currentAccount.locale,
+        options
+    ).format(now);
 });
 
 btnTransfer.addEventListener(`click`, function (e) {
@@ -224,14 +234,6 @@ btnSort.addEventListener('click', function (e) {
     sorted = !sorted;
 });
 
-const now = new Date();
-const day = `${now.getDate()}`.padStart(2, 0);
-const month = `${now.getMonth() + 1}`.padStart(2, 0);
-const year = now.getFullYear();
-const hour = `${now.getHours()}`.padStart(2, 0);
-const minutes = `${now.getMinutes()}`.padStart(2, 0);
-
-labelDate.innerHTML = `${day}/${month}/${year}, ${hour}:${minutes}`;
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 
