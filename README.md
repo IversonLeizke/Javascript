@@ -27,6 +27,7 @@
 21. The Remainder operator and Numeric Separators
 22. BigInt
 23. Date and timing
+24. Internationalizing dates
 
 **Coding challenges:**
 
