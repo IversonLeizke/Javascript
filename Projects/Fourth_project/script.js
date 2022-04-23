@@ -86,6 +86,12 @@ const displayDate = function (date) {
     }
 };
 
+const formattedMov = (value, loc, cur) =>
+    new Intl.NumberFormat(loc, {
+        style: 'currency',
+        currency: cur,
+    }).format(value);
+
 const displayMovements = function (acc, sort = false) {
     const movs = sort
         ? acc.movements.slice().sort((a, b) => a - b)
@@ -100,7 +106,11 @@ const displayMovements = function (acc, sort = false) {
             i + 1
         } ${type}</div>
         <div class="movements__date">${displayDate(date)}</div>
-        <div class="movements__value">${mov.toFixed(2)}€</div>
+        <div class="movements__value">${formattedMov(
+            mov,
+            acc.locale,
+            acc.currency
+        )}</div>
     </div>`;
         containerMovements.insertAdjacentHTML('afterbegin', html);
     });
@@ -118,23 +128,31 @@ const userName = function (accs) {
 
 const calcPrintBalance = function (acc) {
     acc.balance = acc.movements.reduce((acc, value) => acc + value, 0);
-    labelBalance.textContent = `${acc.balance.toFixed(2)} EUR`;
+    labelBalance.textContent = formattedMov(
+        acc.balance,
+        acc.locale,
+        acc.currency
+    );
 };
 
 const calcDisplaySumary = function (acc) {
     const incomes = acc.movements
         .filter(value => value > 0)
         .reduce((acc, value) => acc + value, 0);
-    labelSumIn.textContent = `${incomes.toFixed(2)} €`;
+    labelSumIn.textContent = formattedMov(incomes, acc.locale, acc.currency);
     const outcomes = acc.movements
         .filter(value => value < 0)
         .reduce((acc, value) => acc + value, 0);
-    labelSumOut.textContent = `${outcomes.toFixed(2)} €`;
+    labelSumOut.textContent = formattedMov(outcomes, acc.locale, acc.currency);
     const interest = acc.movements
         .filter(value => value > 0)
         .map(mov => (mov * acc.interestRate) / 100)
         .reduce((acc, value) => (value >= 1 ? acc + value : acc), 0);
-    labelSumInterest.textContent = `${interest.toFixed(2)} €`;
+    labelSumInterest.textContent = formattedMov(
+        interest,
+        acc.locale,
+        acc.currency
+    );
 };
 
 userName(accounts);
