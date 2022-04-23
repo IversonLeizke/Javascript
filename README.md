@@ -28,6 +28,7 @@
 22. BigInt
 23. Date and timing
 24. Internationalizing dates
+25. Internationalizing numbers
 
 **Coding challenges:**
 
