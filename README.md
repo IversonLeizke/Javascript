@@ -29,6 +29,7 @@
 23. Date and timing
 24. Internationalizing dates
 25. Internationalizing numbers
+26. Timers
 
 **Coding challenges:**
 
