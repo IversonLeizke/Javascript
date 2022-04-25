@@ -57,6 +57,7 @@
 2. Modal - handling events
 3. Pig Game - doom manipulation project
 4. Bankist - array methods
+5. Bankist - using doom manipulation to add efects to the page
 
 ## Personal
 
