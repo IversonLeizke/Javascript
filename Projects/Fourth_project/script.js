@@ -157,12 +157,32 @@ const calcDisplaySumary = function (acc) {
 
 userName(accounts);
 
-let currentAccount;
+let currentAccount, timer;
 
 const updateAccount = function (currentAccount) {
     displayMovements(currentAccount);
     calcPrintBalance(currentAccount);
     calcDisplaySumary(currentAccount);
+    if (timer) clearInterval(timer);
+    timer = startLogOutTimer();
+};
+
+const startLogOutTimer = function () {
+    let time = 60 * 5;
+    const tick = function () {
+        const min = String(Math.trunc(time / 60)).padStart(2, 0);
+        const sec = String(time % 60).padStart(2, 0);
+        labelTimer.textContent = `${min}:${sec}`;
+        time--;
+        if (time === -1) {
+            clearInterval(timer);
+            labelWelcome.textContent = 'Log in to get started';
+            containerApp.style.opacity = 0;
+        }
+    };
+    tick();
+    const timer = setInterval(tick, 1000);
+    return timer;
 };
 
 //Event  handler
@@ -235,13 +255,18 @@ btnClose.addEventListener(`click`, function (e) {
 
 btnLoan.addEventListener('click', function (e) {
     e.preventDefault();
-    const loan = Math.floor(inputLoanAmount.value);
-    if (loan > 0 && currentAccount.movements.some(mov => mov >= loan * 0.1)) {
-        currentAccount.movements.push(loan);
-        currentAccount.movementsDates.push(new Date().toISOString());
-    }
-    updateAccount(currentAccount);
-    inputLoanAmount.value = '';
+    setTimeout(() => {
+        const loan = Math.floor(inputLoanAmount.value);
+        if (
+            loan > 0 &&
+            currentAccount.movements.some(mov => mov >= loan * 0.1)
+        ) {
+            currentAccount.movements.push(loan);
+            currentAccount.movementsDates.push(new Date().toISOString());
+        }
+        updateAccount(currentAccount);
+        inputLoanAmount.value = '';
+    }, 3000);
 });
 
 let sorted = false;
@@ -257,9 +282,9 @@ btnSort.addEventListener('click', function (e) {
 
 //Fake Login
 
-currentAccount = account1;
-updateAccount(currentAccount);
-containerApp.style.opacity = 100;
+// currentAccount = account1;
+// updateAccount(currentAccount);
+// containerApp.style.opacity = 100;
 
 // LECTURES
 
