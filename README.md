@@ -30,6 +30,7 @@
 24. Internationalizing dates
 25. Internationalizing numbers
 26. Timers
+27. Dom - Selecting, creating and deleting elements
 
 **Coding challenges:**
 
