@@ -7,6 +7,7 @@ const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
+const header = document.querySelector('.header');
 
 const openModal = function (e) {
     e.preventDefault();
@@ -28,4 +29,17 @@ document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
         closeModal();
     }
+});
+
+const message = document.createElement('div');
+message.classList.add('cookie-message');
+// message.textContent =
+//     'We use cookie for improved, functionality and analytics.';
+message.innerHTML =
+    'We use cookied for improved, functionality and analytics. <button class="btn btn--close-cookie">Got it!</button>';
+header.prepend(message);
+
+document.querySelector('.btn--close-cookie').addEventListener('click', e => {
+    e.preventDefault();
+    message.remove();
 });
