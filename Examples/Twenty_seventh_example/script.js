@@ -20,3 +20,8 @@ document.querySelector('.btn--close-cookie').addEventListener('click', e => {
     e.preventDefault();
     message.remove();
 });
+
+// Styles
+message.style.backgroundColor = '#37383d';
+message.style.width = '120%';
+console.log(getComputedStyle(message).color);
