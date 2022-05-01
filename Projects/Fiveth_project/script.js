@@ -37,7 +37,9 @@ message.classList.add('cookie-message');
 //     'We use cookie for improved, functionality and analytics.';
 message.innerHTML =
     'We use cookied for improved, functionality and analytics. <button class="btn btn--close-cookie">Got it!</button>';
-header.prepend(message);
+message.style.backgroundColor = '#37383d';
+message.style.width = '120%';
+header.append(message);
 
 document.querySelector('.btn--close-cookie').addEventListener('click', e => {
     e.preventDefault();
