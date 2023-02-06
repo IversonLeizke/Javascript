@@ -38,10 +38,18 @@ message.classList.add('cookie-message');
 message.innerHTML =
     'We use cookied for improved, functionality and analytics. <button class="btn btn--close-cookie">Got it!</button>';
 message.style.backgroundColor = '#37383d';
-message.style.width = '120%';
+message.style.width = '100%';
 header.append(message);
-
+message.style.height =
+    Number.parseFloat(getComputedStyle(message).height, 10) + 30 + 'px';
 document.querySelector('.btn--close-cookie').addEventListener('click', e => {
     e.preventDefault();
-    message.remove();
+    message.parentElement.removeChild(message);
+});
+
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+btnScrollTo.addEventListener('click', function (e) {
+    section1.scrollIntoView({ behavior: 'smooth' });
 });
