@@ -99,12 +99,13 @@ nav.addEventListener('mouseout', handleHover.bind(1));
 
 // Stick navigation
 
-const intialCords = section1.getBoundingClientRect();
-
-window.addEventListener('scroll', function (e) {
-    if (this.window.scrollY > intialCords.top) {
-        nav.classList.add('sticky');
-    } else {
-        nav.classList.remove('sticky');
-    }
-});
+const navHeight = nav.getBoundingClientRect().height;
+const obsCallBack = function (entries) {
+    const [entry] = entries;
+    console.log(entry.isIntersecting);
+    if (!entry.isIntersecting) nav.classList.add('sticky');
+    else nav.classList.remove('sticky');
+};
+const obOptions = { root: null, threshold: 0, rootMargin: `-${navHeight}px` };
+const observer = new IntersectionObserver(obsCallBack, obOptions);
+observer.observe(header);
