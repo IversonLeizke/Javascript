@@ -52,6 +52,7 @@
 15. Closures - Using the closure to get acess to a variable from other scope
 16. Arrays - Using some methods to change and print some data
 17. Arrays methods - working with some data for a research
+18. OOP - Creating a car object
 
 **Projects**
 
