@@ -31,6 +31,7 @@
 25. Internationalizing numbers
 26. Timers
 27. Dom - Selecting, creating, deleting elements, styles, attributes and classes
+28. Object Oriented Programming - Constructor, Prototypes, inheritance
 
 **Coding challenges:**
 
